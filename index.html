@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Weather App</title>
 </head>
+
 <body>
     <div class="container">
-        <h1>Weather App</h1>
-        
-        <form id="cityForm">
-            <label for="cityInput">Enter City:</label>
-            <input type="text" id="cityInput" required>
-            <button type="button" onclick="getWeather()">Get Weather</button>
-        </form>
+        <header>
+            <h1 class="title">Weather Application</h1>
+        </header>
 
-        <div id="weather-icon"></div>
-        <p id="weather-description"></p>
-        <p id="temperature"></p>
-        <p id="location"></p>
+        <main class="weather-container">
+            <section id="location">
+                <input type="text" id="city" placeholder="Enter city name">
+                <button class="btn"><i class="fas fa-search fa-beat"></i>Get Weather</button>
+            </section>
 
-        <script src="config.js"></script>
-        <script src="app.js"></script>
+            <section id="weather-info">
+                <div class="weather-details">
+                    <!-- <div class="weather-icon"> -->
+                        <img src="./weather-pack/clear.png" class="weather-icon" alt="weather-img">
+                    <!-- </div> -->
+                    <div class="temperature" id="temperature">--°C</div>
+                    <div class="location" id="location-output">Location</div>
+                    <p id="error-message" class="error-message"></p>
+                </div>
+
+                <section class="weather-description">
+                    <div class="weather-info-col">
+                        <img class="humidity-img" src="weather-pack/humidity.png" alt="Humidity">
+                        <div>
+                            <h2 id="humidity">--%</h2>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+
+                    <div class="weather-info-col">
+                        <img class="wind-speed-img" src="weather-pack/wind.png" alt="Wind">
+                        <div>
+                            <h2 id="wind-speed">-- mt/sec</h2>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Weather App</p>
+        </footer>
     </div>
+
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>
